@@ -1,0 +1,58 @@
+Here is the clean startup checklist to get both services running fresh from scratch:
+
+1. **Start the Python FastAPI Backend:** Terminal 1 (Root Directory).
+Open your terminal at the project root (`CopilotKit Test 1`):
+
+```powershell
+# 1. Activate the Python virtual environment
+.\.venv\Scripts\Activate.ps1
+
+# 2. Start the FastAPI server
+python backend/server.py
+
+```
+
+**Check:** Look for:
+
+```text
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+```
+
+
+2. **Start the Next.js Frontend:** Terminal 2 (Frontend Directory).
+Open a second terminal window or tab and run:
+
+```powershell
+cd frontend
+npm run dev
+
+```
+
+**Check:** Look for:
+
+```text
+▲ Next.js ...
+- Local:        http://localhost:3000
+
+```
+
+
+3. **Clear Browser LocalStorage & Load App:** Browser (localhost:3000).
+1. Navigate to:
+
+```text
+http://localhost:3000
+
+```
+
+2. Press **`F12`** $\to$ go to the **Console** tab.
+3. Run this single command to wipe any outdated cached states:
+
+```javascript
+localStorage.clear(); location.reload();
+
+```
+
+
+Once reloaded, click **+ New thread** or test one of the prompt chips to confirm both sides communicate cleanly.
